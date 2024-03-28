@@ -1,0 +1,48 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace HttpClient
+{
+    class Dowmloader
+    {
+        public static string UrlToDownload = 'https://16bpp.net/tutorials/csharp-networking/01/';
+        public static string filename = 'HttpClient.html';
+
+        public static async Task DownloadWebPage()
+        {
+            Console.WriteLine('Downloading started...');
+
+            using (HttpClient HttpClient = new HttpClient)
+            {
+                HttpResponseMessage resp = await httpClient.GetAsync(UrlToDownload);
+
+                if (resp.IsSuccessStatusCode)
+                {
+                    Console.WriteLine('Url get successfuly');
+
+                    byte[] data = await resp.Content.ReadAsByteArrayAsync();
+
+                    FileSrteam fStream = File.Create(filename);
+                    await fStream.WriteAsync(data, 0, byte.Length);
+                    fStream.Close();
+
+                    Console.WriteLine('Downloading done!');
+                }
+            }
+        }
+
+        public static void Main(string[] args)
+        {
+            Task dlTask = DownloadWebPage();
+            
+            Console.WriteLine('Await for 5 sec...');
+            Tread.Sleep(TimeSpan.FromSeconds(5));
+
+            dlTask.GetAwaiter().GetResult();
+        }       
+    }
+}
