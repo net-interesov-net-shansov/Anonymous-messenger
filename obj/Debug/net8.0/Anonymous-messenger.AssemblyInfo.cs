@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Anonymous-messenger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1f097aa99c6eef49d9b124c9c64acfa7ab96c32")]
 [assembly: System.Reflection.AssemblyProductAttribute("Anonymous-messenger")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Anonymous-messenger")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

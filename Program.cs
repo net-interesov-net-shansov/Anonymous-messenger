@@ -204,8 +204,8 @@ namespace TcpChat
                 {
                     byte[] msgBuffer = Encoding.UTF8.GetBytes(msg);
 
-                    foreach (TcpClient v in _viewers)
-                        v.GetStream().Write(msgBuffer, 0, msgBuffer.Length);    // Blocks
+                    foreach (TcpClient m in _viewers)
+                        m.GetStream().Write(msgBuffer, 0, msgBuffer.Length);    // Blocks
                 }
                 _messageQueue.Clear();
             }
